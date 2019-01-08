@@ -26,3 +26,4 @@ assignees: ''
 2. 如进程异常，请将coredump功能开启，上传coredump信息文件。  
 在自定义界面，开启设置->自定义设置->生成coredump配置，重现问题后提交coredump文件
 coredump文件在/tmp目录下
+

@@ -19,7 +19,3 @@ assignees: ''
 2. 固件信息
 
 
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
-
