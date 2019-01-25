@@ -119,9 +119,11 @@ rtt min/avg/max/mdev = 5.954/6.133/6.313/0.195 ms
 |华硕原生固件(optware)|smartdns.xxxxxxx.mipsbig.ipk|支持MIPS大端架构的系统，如RT-AC55U, RT-AC66U.
 |华硕原生固件(optware)|smartdns.xxxxxxx.mipsel.ipk|支持MIPS小端架构的系统，如RT-AC68U。
 |华硕原生固件(optware)|smartdns.xxxxxxx.arm.ipk|支持arm小端架构的系统，如RT-AC88U。
+|Padavan|smartdns.xxxxxxx.mipselsf.ipk|padavan固件。
 |openwrt 15.01|smartdns.xxxxxxxx.ar71xx.ipk|支持AR71XX MIPS系统。
 |openwrt 15.01|smartdns.xxxxxxxx.ramips_24kec.ipk|支持MT762X等小端路由器
 |openwrt 15.01(潘多拉)|smartdns.xxxxxxxx.mipsel_24kec_dsp.ipk|支持MT7620系列的潘多拉固件
+|openwrt 15.01(潘多拉)|smartdns.xxxxxxxx.mips_74kc_dsp2.ipk|支持AR71xx系列的潘多拉固件
 |openwrt 18.06|smartdns.xxxxxxxx.mips_24kc.ipk|支持AR71XX MIPS系统。
 |openwrt 18.06|smartdns.xxxxxxxx.mipsel_24kc.ipk|支持MT726X等小端路由器
 |openwrt 18.06|smartdns.xxxxxxxx.x86_64.ipk|支持x86_64路由器
@@ -391,13 +393,14 @@ rtt min/avg/max/mdev = 5.954/6.133/6.313/0.195 ms
 |server|上游UDP DNS|无|[ip][:port] [-blacklist-ip][-check-edns]，可重复，blacklist-ip参数指定使用blacklist-ip配置IP过滤结果| server 8.8.8.8:53 -blacklist-ip -check-edns
 |server-tcp|上游TCP DNS|无|[IP][:port] [-blacklist-ip][-check-edns]，可重复，blacklist-ip参数指定使用blacklist-ip配置IP过滤结果| server-tcp 8.8.8.8:53
 |server-tls|上游TLS DNS|无|[IP][:port] [-blacklist-ip][-check-edns]，可重复，blacklist-ip参数指定使用blacklist-ip配置IP过滤结果| server-tls 8.8.8.8:853
-|address|指定域名IP地址|无|address /domain/ip| address /www.example.com/1.2.3.4
-|ipset|域名IPSET|None|ipset /domain/ipset|ipset /www.example.com/pass
+|address|指定域名IP地址|无|address /domain/[ip\|-\|-4\|-6\|#\|#4\|#6], `-`表示忽略, `#`表示返回SOA, `4`表示IPV4, `6`表示IPV6| address /www.example.com/1.2.3.4
+|ipset|域名IPSET|None|ipset /domain/[ipset\|-], `-`表示忽略|ipset /www.example.com/pass
 |bogus-nxdomain|假冒IP地址过滤|无|[ip/subnet]，可重复| bogus-nxdomain 1.2.3.4/16
+|ignore-ip|忽略IP地址|无|[ip/subnet]，可重复| ignore-ip 1.2.3.4/16
 |blacklist-ip|黑名单IP地址|无|[ip/subnet]，可重复| blacklist-ip 1.2.3.4/16
 |force-AAAA-SOA|强制AAAA地址返回SOA|no|[yes\|no]|force-AAAA-SOA yes
 |dualstack-ip-selection|双栈IP优选|no|[yes\|no]|dualstack-ip-selection yes
-|dualstack-ip-selection-threshold|双栈IP优选阈值|100ms|毫秒|dualstack-ip-selection-threshold [1-1000]
+|dualstack-ip-selection-threshold|双栈IP优选阈值|30ms|毫秒|dualstack-ip-selection-threshold [0-1000]
 
 ## [Donate](#Donate)  
 
