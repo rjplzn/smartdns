@@ -109,7 +109,7 @@ From the comparison, smartdns found the fastest IP address to visit www.baidu.co
    Support IPV4, IPV6 network, support query A, AAAA record, dual-stack IP selection, and disale IPV6 AAAA record.
 
 8. **High performance, low resource consumption**  
-   Multi-threaded asynchronous IO mode, cache cache query results.
+   Multi-threaded asynchronous IO mode, cache query results.
 
 ## Architecture
 
@@ -600,13 +600,13 @@ Note: Merlin firmware is derived from ASUS firmware and can theoretically be use
 1. How to enable the audit log  
     The audit log records the domain name requested by the client. The record information includes the request time, the request IP address, the request domain name, and the request type. If you want to enable the audit log, configure `audit-enable yes` in the configuration file, `audit-size`, `Audit-file`, `audit-num` configure the audit log file size, the audit log file path, and the number of audit log files. The audit log file will be compressed to save space.
 
-1. How to avoid DNS privacy leaks
+1. How to avoid DNS privacy leaks  
     By default, smartdns will send requests to all configured DNS servers. If the upstream DNS servers record DNS logs, it will result in a DNS privacy leak. To avoid privacy leaks, try the following steps:
     * Use trusted DNS servers.
     * Use TLS servers.
     * Set up an upstream DNS server group.
 
-1. How to block ads
+1. How to block ads  
     Smartdns has a high-performance domain name matching algorithm. It is very efficient to filter advertisements by domain name. To block ads, you only need to configure records like the following configure. For example, if you block `*.ad.com`, configure as follows:
 
     ```sh
@@ -619,7 +619,7 @@ Note: Merlin firmware is derived from ASUS firmware and can theoretically be use
     Address /pass.ad.com/-
     ```
 
-1. DNS query diversion
+1. DNS query diversion  
     In some cases, some domain names need to be queried using a specific DNS server to do DNS diversion. such as.
 
     ```sh
